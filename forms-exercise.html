@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ubermelon Order Form</title>
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <!-- Style per further study exercise for CSS afternoon exercise (10/5/15) -->
+    <style>
+    body {
+        font-family: sans-serif;
+    }
+
+    header {
+        display: block;
+        text-align: center;
+        padding: 0.25em 0;
+        margin-bottom: 1em;
+    }
+
+    footer {
+        margin-top: 2em;
+        margin-left: 10%;
+    }
+
+    div {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    div.left {
+        margin-left: 10%;
+    }
+
+    div.right {
+        margin-left: 5%;
+
+    }
+
+    label {
+        margin-top: 0.55em;
+        display: block;
+        font-weight: bold;
+        font-color: #050505;
+    }
+
+    #prices {
+        border-collapse: collapse;
+        margin: 0 auto;
+        display: block;
+    }
+
+    #prices td, th {
+        border: 1px solid #050505;
+        padding: 0.5em;
+    }
+
+    input[type="submit"]{
+        font-weight: bold; 
+    }
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Your Order</h1>
+    </header>
+    <div class="left">
+        <h3>Prices</h3>
+        <table id="prices">
+            <tr>
+                <th>Melon Name</th>
+                <th>Price (per lb)</th>
+            </tr>
+            <tr>
+                <td>Watermelon</td>
+                <td>$1.59</td>
+            </tr>
+            <tr>
+                <td>Honeydew</td>
+                <td>$0.99</td>
+            </tr>
+            <tr>
+                <td>Canteloupe</td>
+                <td>$1.29</td>
+            </tr>        
+            <tr>
+                <td>Crenshaw</td>
+                <td>$2.19</td>
+            </tr>        
+            <tr>
+                <td>Canary</td>
+                <td>$11.99</td>
+            </tr>        
+        </table>
+    </div> <!-- end left block class -->
+
+    <div class="right">
+        <h3>Place your orders here! You know you want to.</h3>
+
+        <form action="https://ubermelon-order-form.herokuapp.com/process" method="POST">
+            <label>First Name</label>
+                <input type="text" name="firstname" placeholder="Angie">
+
+            <label>Last Name</label>
+                <input type="text" name="lastname" placeholder="Stone">
+
+            <label>Melon Type</label>
+                <select name="melontype">
+                    <option value="watermelon">Watermelon</option>
+                    <option value="honeydew">Honeydew</option>
+                    <option value="canteloupe">Canteloupe</option>
+                    <option value="crenshaw">Crenshaw</option>
+                    <option value="canary">Canary</option>
+                </select>
+
+            <label>Quantity*</label>
+                <input type="text" name="quantity" placeholder="1">
+            
+            <label>Delivery Time</label><br>
+                <input type="radio" name="time" value="am">Midnight to Noon<br>
+                <input type="radio" name="time" value="pm">Noon to Midnight<br>
+                <input type="radio" name="time" value="wat">Time is an illusion<br><br>
+            
+            <label>Loyal Customer</label><br>
+                <input type="radio" name="loyal" value="yes">Yes<br>
+                <input type="radio" name="loyal" value="no">No<br><br>
+            
+            <label>Demographic Information</label><br>
+                <input type="checkbox" name="stats" value="dog">Dog<br>
+                <input type="checkbox" name="stats" value="cat">Cat<br>
+                <input type="checkbox" name="stats" value="hedgehog">Hedgehog<br>
+                <input type="checkbox" name="stats" value="balloonicorn">Balloonicorn<br>
+                <input type="checkbox" name="stats" value="yak">Yak<br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <footer>
+        <h4>*Quantities are by the flat.</h4>
+    </footer>
+</body>
+</html>
